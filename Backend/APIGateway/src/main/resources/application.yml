@@ -1,0 +1,69 @@
+server:
+  port: 8086
+spring:
+  application:
+    name: API-GATEWAY
+  cloud:
+    gateway:
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowedOrigins: "*"
+            allowedMethods: "*"
+            allowedHeaders: "*"
+      routes:
+      - id: GROCERY-BOOKING-ADD-ITEM
+        predicates:
+        - Path=/groceryApp/addItem/**
+        uri: lb://GROCERY-BOOKING-ADD-ITEM
+      - id: GROCERY-BOOKING-VIEW-ALL-ITEMS
+        predicates:
+        - Path=/groceryApp/viewAllItems/**
+        uri: lb://GROCERY-BOOKING-VIEW-ALL-ITEMS
+      - id: GROCERY-BOOKING-REMOVE-ITEM
+        predicates:
+        - Path=/groceryApp/removeItem/**
+        uri: lb://GROCERY-BOOKING-REMOVE-ITEM
+      - id: GROCERY-BOOKING-UPDATE-ITEM
+        predicates:
+        - Path=/groceryApp/updateGrocery/**
+        uri: lb://GROCERY-BOOKING-UPDATE-ITEM
+      - id: GROCERY-ITEM-ADD-TO-CART
+        predicates:
+        - Path=/groceryApp/addItemToCart/**
+        uri: lb://GROCERY-ITEM-ADD-TO-CART
+      - id: GROCERY-BOOKING-VIEW-CART
+        predicates:
+        - Path=/groceryApp/viewCart/**
+        uri: lb://GROCERY-BOOKING-VIEW-CART
+      - id: GROCERY-BOOKING-REMOVE-CART-ITEM
+        predicates:
+        - Path=/groceryApp/removeItemFromCart/**
+        uri: lb://GROCERY-BOOKING-REMOVE-CART-ITEM
+      - id: GROCERY-BOOK-ITEM-CHECKOUT
+        predicates:
+        - Path=/groceryApp/confirmBooking/**
+        uri: lb://GROCERY-BOOK-ITEM-CHECKOUT
+      - id: GROCERY-BOOKING-ORDER-HISTORY
+        predicates:
+        - Path=/groceryApp/orderHistory/**
+        uri: lb://GROCERY-BOOKING-ORDER-HISTORY
+      - id: GROCERY-BOOKING-SIGNUP
+        predicates:
+        - Path=/groceryApp/signUp/**
+        uri: lb://GROCERY-BOOKING-SIGNUP
+      - id: GROCERY-APP-SHOW-ALL-USERS
+        predicates:
+        - Path=/groceryApp/showUsers/**
+        uri: lb://GROCERY-APP-SHOW-ALL-USERS
+      - id: GROCERY-APP-UPDATE-USER-ROLE
+        predicates:
+        - Path=/groceryApp/updateUser/**
+        uri: lb://GROCERY-APP-UPDATE-USER-ROLE
+      - id: GROCERY-APP-LOGIN
+        predicates:
+        - Path=/groceryApp/login/**
+        uri: lb://GROCERY-APP-LOGIN
+          
+          
+          
