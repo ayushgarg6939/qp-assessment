@@ -1,0 +1,44 @@
+<div class="background-cover">
+  <div class="login-box left-side">
+    <img src="./../../../../assets/logo.png">
+    <h1>Sign up</h1>
+    <form>
+      <div class="user-box">
+        <input type="text" [(ngModel)]="newUser.groceryAppUserName" name="groceryAppUserNameSignIn" required="">
+        <label>Username</label>
+      </div>
+      <div class="user-box">
+        <input type="password" [(ngModel)]="newUser.groceryAppUserPassword" name="groceryAppUserPasswordSignIn" required="">
+        <label>Password</label>
+      </div>
+      <button (click)="addUser()">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <b>Sign in</b>
+      </button>
+    </form>
+  </div>
+    <div class="login-box">
+        <img src="./../../../../assets/logo.png">
+        <h1>Login</h1>
+        <form>
+          <div class="user-box">
+            <input type="text" [(ngModel)]="user.groceryAppUserName" name="groceryAppUserName" required="">
+            <label>Username</label>
+          </div>
+          <div class="user-box">
+            <input type="password" [(ngModel)]="user.groceryAppUserPassword" name="groceryAppUserPassword" required="">
+            <label>Password</label>
+          </div>
+          <button (click)="verifyUser()">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <b>Login</b>
+          </button>
+        </form>
+      </div>    
+    </div>
